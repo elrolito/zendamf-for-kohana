@@ -311,8 +311,8 @@ class Zend_Amf_Server implements Zend_Server_Interface
                     throw new Zend_Amf_Server_Exception('Can not call "' . $className . '" - use setClass()');
 				}
                 try {
-                    // Change to Kohana loader
-                	// $this->getLoader()->load($className);
+                    // Replace with Kohana autoloader
+                	//$this->getLoader()->load($className);
                 	Kohana::auto_load($className);
                 } catch (Exception $e) {
                     require_once 'Zend/Amf/Server/Exception.php';
