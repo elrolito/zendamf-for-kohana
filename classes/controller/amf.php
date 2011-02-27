@@ -1,9 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-ini_set('include_path',ini_get('include_path').PATH_SEPARATOR.MODPATH.'zendamf-for-kohana/vendor/');
-require 'Zend/Amf/Server.php';
-
-class Controller_Amf extends Controller {
+class Controller_AMF extends Controller {
  
     public $server;
     
@@ -28,10 +25,9 @@ class Controller_Amf extends Controller {
         
         $handle = $this->server->handle();
         
-        // fixes bug with content-type headers
         if (Request::is_amf())
-            $this->request->response = $handle;
-        else
-            echo $handle;
+        {
+            $this->response->body($handle);
+        }
     }
 }

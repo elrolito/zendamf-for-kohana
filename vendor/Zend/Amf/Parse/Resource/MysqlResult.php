@@ -15,36 +15,36 @@
  * @category   Zend
  * @package    Zend_Amf
  * @subpackage Parse
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: MysqlResult.php 16971 2009-07-22 18:05:45Z mikaelkael $
+ * @version    $Id: MysqlResult.php 20096 2010-01-06 02:05:09Z bkarwin $
  */
 
 /**
- * This class will convert mysql result resource to array suitable for passing 
+ * This class will convert mysql result resource to array suitable for passing
  * to the external entities.
  *
  * @package    Zend_Amf
  * @subpackage Parse
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Amf_Parse_Resource_MysqlResult 
+class Zend_Amf_Parse_Resource_MysqlResult
 {
     /**
      * @var array List of Mysql types with PHP counterparts
-     * 
+     *
      * Key => Value is Mysql type (exact string) => PHP type
      */
     static public $fieldTypes = array(
         "int" => "int",
         "timestamp" => "int",
         "year" => "int",
-    	"real" => "float",
+        "real" => "float",
     );
     /**
      * Parse resource into array
-     * 
+     *
      * @param resource $resource
      * @return array
      */
